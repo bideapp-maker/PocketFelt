@@ -1,1 +1,294 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pocket Felt — Privacy Policy</title>
+  <style>
+    :root {
+      --jet-black:   #223843;
+      --platinum:    #EFF1F3;
+      --dust-grey:   #DBD3D8;
+      --desert-sand: #D8B4A0;
+      --burnt-peach: #D77A61;
+      --surface:     rgba(239,241,243,0.08);
+      --surface-el:  rgba(239,241,243,0.13);
+      --hairline:    rgba(219,211,216,0.20);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--jet-black);
+      color: var(--platinum);
+      font-family: -apple-system, "SF Pro Rounded", "SF Pro Display", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--burnt-peach); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+    }
+    .nav-brand .felt { color: var(--burnt-peach); }
+    .nav-icon {
+      width: 36px; height: 36px;
+      border-radius: 9px;
+      background: var(--surface-el);
+      border: 1px solid var(--hairline);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dust-grey);
+    }
+    nav a:hover { color: var(--platinum); text-decoration: none; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 48px 24px 36px;
+    }
+    .hero h1 {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+      color: var(--platinum);
+    }
+    .hero .sub {
+      font-size: 14px;
+      color: var(--dust-grey);
+    }
+
+    /* ── Content ── */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--burnt-peach);
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--platinum);
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--dust-grey);
+      line-height: 1.65;
+    }
+    .card p + p { margin-top: 10px; }
+
+    .highlight-card {
+      background: rgba(215,122,97,0.10);
+      border-color: rgba(215,122,97,0.30);
+    }
+    .highlight-card h3 { color: var(--burnt-peach); }
+
+    ul.privacy-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 4px;
+    }
+    ul.privacy-list li {
+      font-size: 14px;
+      color: var(--dust-grey);
+      line-height: 1.65;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--hairline);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    ul.privacy-list li:last-child { border-bottom: none; }
+    ul.privacy-list li::before {
+      content: "·";
+      color: var(--burnt-peach);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    /* ── Contact ── */
+    .cta-block {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 12px;
+    }
+    .cta-block p {
+      font-size: 14px;
+      color: var(--dust-grey);
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: var(--burnt-peach);
+      color: var(--jet-black);
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 14px;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.88; text-decoration: none; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--hairline);
+      padding: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--dust-grey);
+      opacity: 0.7;
+    }
+    footer a { color: var(--dust-grey); }
+    footer a:hover { color: var(--burnt-peach); }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-brand">
+      <div class="nav-icon">🃏</div>
+      <span><span class="pocket">POCKET</span> <span class="felt">FELT</span></span>
+    </div>
+    <a href="index.html">Support</a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Privacy Policy</h1>
+    <p class="sub">Effective June 10, 2026 &nbsp;·&nbsp; App version 1.0 and later</p>
+  </div>
+
+  <div class="content">
+
+    <!-- Short version -->
+    <div class="card highlight-card">
+      <h3>The short version</h3>
+      <p>Pocket Felt does not collect, transmit, or share any personal data. Everything stays on your device. There are no accounts, no analytics, no ads, and no tracking of any kind.</p>
+    </div>
+
+    <!-- What we store -->
+    <p class="section-title">What is stored on your device</p>
+
+    <div class="card">
+      <h3>Local data only</h3>
+      <p>Pocket Felt stores the following data locally on your device using iOS's standard UserDefaults system. None of it leaves your device.</p>
+      <ul class="privacy-list">
+        <li>Your saved (starred) games</li>
+        <li>Your score pads — player names, round scores, and game settings</li>
+        <li>Whether you have unlocked the Dice Roller in-app purchase</li>
+        <li>App preferences</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>What happens when you delete the app</h3>
+      <p>All locally stored data is permanently removed from your device when you delete Pocket Felt. There is no server-side backup. iCloud sync is not currently supported.</p>
+    </div>
+
+    <!-- What we don't collect -->
+    <p class="section-title">What we do not collect</p>
+
+    <div class="card">
+      <p>Pocket Felt collects <strong style="color:var(--platinum)">no data of any kind</strong> about you or your device. Specifically:</p>
+      <ul class="privacy-list">
+        <li>No name, email address, or contact information</li>
+        <li>No device identifiers or advertising IDs</li>
+        <li>No location data</li>
+        <li>No usage analytics or crash reports</li>
+        <li>No third-party SDKs, trackers, or analytics frameworks are included in the app</li>
+      </ul>
+      <p style="margin-top:12px;">The app's declared data practice with Apple is <strong style="color:var(--platinum)">"Data Not Collected."</strong></p>
+    </div>
+
+    <!-- In-app purchases -->
+    <p class="section-title">In-App Purchases</p>
+
+    <div class="card">
+      <h3>Handled entirely by Apple</h3>
+      <p>The Dice Roller unlock and optional tips are processed by Apple's App Store payment system. Pocket Felt never sees your payment details, Apple ID, or any purchase-related personal information. Apple's privacy policy governs that transaction.</p>
+      <p>The app records only a boolean flag locally — "dice roller purchased: yes/no" — to avoid making a network call every time you open the app.</p>
+    </div>
+
+    <!-- Internet access -->
+    <p class="section-title">Internet access</p>
+
+    <div class="card">
+      <p>Pocket Felt makes <strong style="color:var(--platinum)">no network requests</strong> of its own. The app works entirely offline. The only exception is the standard App Store purchase flow when you tap "Unlock" or "Restore Purchases" — those requests go directly to Apple's servers and are not routed through us.</p>
+    </div>
+
+    <!-- Children -->
+    <p class="section-title">Children</p>
+
+    <div class="card">
+      <p>Pocket Felt is rated 4+ on the App Store. Because the app collects no data, it is safe for users of any age under applicable laws including COPPA and GDPR-K.</p>
+    </div>
+
+    <!-- Changes -->
+    <p class="section-title">Changes to this policy</p>
+
+    <div class="card">
+      <p>If we ever change what data the app collects or how it is used, we will update this page and revise the effective date above. We will not change our data practices without updating this policy first.</p>
+    </div>
+
+    <!-- Contact -->
+    <p class="section-title">Contact</p>
+
+    <div class="cta-block">
+      <p>Questions about this privacy policy? Get in touch.</p>
+      <a class="btn" href="mailto:bideapp@gmail.com">✉ bideapp@gmail.com</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>© 2026 Pocket Felt &nbsp;·&nbsp; <a href="index.html">Support</a></span>
+  </footer>
+
+</body>
+</html>
