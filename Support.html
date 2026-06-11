@@ -1,1 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pocket Felt — Support</title>
+  <style>
+    :root {
+      --jet-black:   #223843;
+      --platinum:    #EFF1F3;
+      --dust-grey:   #DBD3D8;
+      --desert-sand: #D8B4A0;
+      --burnt-peach: #D77A61;
+      --surface:     rgba(239,241,243,0.08);
+      --surface-el:  rgba(239,241,243,0.13);
+      --hairline:    rgba(219,211,216,0.20);
+    }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--jet-black);
+      color: var(--platinum);
+      font-family: -apple-system, "SF Pro Rounded", "SF Pro Display", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--burnt-peach); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+    }
+    .nav-brand .felt { color: var(--burnt-peach); }
+    .nav-icon {
+      width: 36px; height: 36px;
+      border-radius: 9px;
+      background: var(--surface-el);
+      border: 1px solid var(--hairline);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dust-grey);
+    }
+    nav a:hover { color: var(--platinum); text-decoration: none; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 64px 24px 48px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .hero h1 .pocket { color: var(--platinum); }
+    .hero h1 .felt   { color: var(--burnt-peach); }
+    .hero .tagline {
+      font-size: 17px;
+      color: var(--dust-grey);
+      max-width: 440px;
+      margin: 0 auto 28px;
+    }
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dust-grey);
+    }
+    .badge.peach { border-color: var(--burnt-peach); color: var(--burnt-peach); background: rgba(215,122,97,0.10); }
+
+    /* ── Sections ── */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--burnt-peach);
+      margin-bottom: 12px;
+      margin-top: 48px;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--platinum);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3 .icon {
+      font-size: 17px;
+    }
+    .card p, .card li {
+      font-size: 14px;
+      color: var(--dust-grey);
+      line-height: 1.6;
+    }
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .card ul li::before {
+      content: "·";
+      color: var(--burnt-peach);
+      margin-right: 6px;
+    }
+
+    /* ── FAQ ── */
+    details {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 14px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    details[open] {
+      border-color: rgba(215,122,97,0.30);
+    }
+    summary {
+      padding: 16px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--platinum);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "›";
+      font-size: 20px;
+      color: var(--burnt-peach);
+      transition: transform 0.2s;
+    }
+    details[open] summary::after {
+      transform: rotate(90deg);
+    }
+    .faq-body {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--dust-grey);
+      line-height: 1.65;
+    }
+
+    /* ── Contact button ── */
+    .cta-block {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .cta-block p {
+      font-size: 14px;
+      color: var(--dust-grey);
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: var(--burnt-peach);
+      color: var(--jet-black);
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 14px;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.88; text-decoration: none; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--hairline);
+      padding: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--dust-grey);
+      opacity: 0.7;
+    }
+    footer a { color: var(--dust-grey); }
+    footer a:hover { color: var(--burnt-peach); }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-brand">
+      <div class="nav-icon">🃏</div>
+      <span><span class="pocket">POCKET</span> <span class="felt">FELT</span></span>
+    </div>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1><span class="pocket">POCKET</span> <span class="felt">FELT</span></h1>
+    <p class="tagline">Your game-night companion for rules, game finding, and scorekeeping.</p>
+    <div class="badge-row">
+      <span class="badge">📖 54 Games</span>
+      <span class="badge">🎲 Cards &amp; Dice</span>
+      <span class="badge">🎲 Dice Roller</span>
+      <span class="badge peach">iOS App</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Getting Started -->
+    <p class="section-title">Getting Started</p>
+
+    <div class="card">
+      <h3><span class="icon">🔍</span> Finding a Game</h3>
+      <p>Tap the <strong>Find</strong> tab and tell Pocket Felt what you have, how many players are at the table, the vibe you're going for, and how much time you have. Tap <strong>Find Games</strong> to see matches from the library.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">📚</span> The Library</h3>
+      <p>The <strong>Library</strong> tab shows all 54 games. Filter by Cards, Dice, or Saved, or use the search bar. Tap any game for full rules.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🗒️</span> Score Pads</h3>
+      <ul>
+        <li>Start a score pad from any game's detail page, or tap <strong>+</strong> in the Scores tab.</li>
+        <li>You can save up to <strong>3 score pads</strong> at a time.</li>
+        <li>Tap a round row to edit scores. Use the <strong>±</strong> button for negative scores (needed for Spades, etc.).</li>
+        <li>Games with a fixed round count (Golf, Yacht, Chicago, Balut) track progress automatically and declare a winner after the final round.</li>
+        <li>While scoring, tap the <strong>book icon</strong> in the toolbar to read the rules without leaving the pad.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🎲</span> Dice Roller</h3>
+      <ul>
+        <li>The <strong>Dice</strong> tab gives you a standalone virtual dice roller, available any time.</li>
+        <li>Tap any die to <strong>hold</strong> it between rolls — useful for games like Yahtzee or Farkle.</li>
+        <li>Use the <strong>−&thinsp;/&thinsp;+</strong> stepper to change how many dice you're rolling (1–12).</li>
+        <li>When scoring a dice game, a 🎲 button appears in the toolbar of the score pad so you can roll without leaving the card.</li>
+        <li>The dice roller is a one-time in-app purchase. Tap <strong>Unlock</strong> on the Dice tab to get it.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">⭐️</span> Saving Favourites</h3>
+      <p>Tap the star in the top-right corner of any game's detail page to save it. Access your saved games from the <strong>Saved</strong> filter in the Library.</p>
+    </div>
+
+    <!-- FAQ -->
+    <p class="section-title">Frequently Asked Questions</p>
+
+    <details>
+      <summary>Why can I only save 3 score pads?</summary>
+      <div class="faq-body">Pocket Felt is designed to keep things simple. Three pads covers most game nights — one active game, one in progress, one waiting. Delete a finished pad to make room for a new one.</div>
+    </details>
+
+    <details>
+      <summary>The winner banner never appeared on my Golf / Chicago / Balut pad.</summary>
+      <div class="faq-body">These games end after a set number of rounds (Golf = 9, Chicago = 11, Balut = 28, Yacht = 12). Once you enter the last round, the winner banner appears automatically. Make sure you've added all rounds — the header shows your progress, e.g., "7 / 9 rounds."</div>
+    </details>
+
+    <details>
+      <summary>How do I enter a negative score (Spades, Rummy, etc.)?</summary>
+      <div class="faq-body">In the round editor, tap the <strong>±</strong> button to the left of the score field to toggle the sign. The numeric keyboard stays — no need to switch to a full keyboard.</div>
+    </details>
+
+    <details>
+      <summary>Can I change the win direction (high vs low) after creating a pad?</summary>
+      <div class="faq-body">Not after creation. Delete the pad and create a new one with the correct direction. When starting from a game's detail page, the direction is pre-filled from the game's rules.</div>
+    </details>
+
+    <details>
+      <summary>Do I need an account or internet connection?</summary>
+      <div class="faq-body">No. Pocket Felt works entirely offline. There are no accounts, no sign-ins, and no data is ever sent off your device.</div>
+    </details>
+
+    <details>
+      <summary>Where does my data go if I delete the app?</summary>
+      <div class="faq-body">All score pads and favourites are stored locally on your device using iOS's standard UserDefaults storage. Deleting the app removes that data permanently. iCloud sync is not currently supported.</div>
+    </details>
+
+    <details>
+      <summary>How do I unlock the Dice Roller?</summary>
+      <div class="faq-body">Tap the <strong>Dice</strong> tab and then tap the Unlock button. It's a one-time purchase — no subscription. Once unlocked it works for every dice game in the library, forever.</div>
+    </details>
+
+    <details>
+      <summary>I purchased the Dice Roller but it's not showing up.</summary>
+      <div class="faq-body">Tap <strong>About → Restore Purchases</strong>. This re-checks your App Store purchase history and restores the unlock. Make sure you're signed into the same Apple ID you used to buy it.</div>
+    </details>
+
+    <details>
+      <summary>A rule seems wrong. How do I report it?</summary>
+      <div class="faq-body">All games in Pocket Felt use public-domain rules written fresh for the app. If you spot an error or have a clarification, please email us — we take accuracy seriously and will update the rules in the next release.</div>
+    </details>
+
+    <!-- Contact -->
+    <p class="section-title">Contact</p>
+
+    <div class="cta-block">
+      <p>Have a question, spotted a bug, or want to suggest a game? We'd love to hear from you.</p>
+      <a class="btn" href="mailto:bideapp@gmail.com">✉ Get in Touch</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>© 2026 Pocket Felt &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></span>
+  </footer>
+
+</body>
+</html>
